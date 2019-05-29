@@ -1,0 +1,66 @@
+<div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            ID
+          </th>
+          <th>
+             name
+          </th>
+          <th>
+            year
+          </th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td>{{tabletData?.id}}</td>
+          <td>{{tabletData?.name}}</td>
+          <td>{{tabletData?.year}}</td>
+        </tr>
+      </tbody>
+  
+  
+    </table>
+  <button (click)="onButtonClick()"> Modal</button>
+  </div>
+  <!-- <router-outlet></router-outlet> -->
+<!-- <app-table-data [tableDataInput]="dataForChild" (outputEvent)="childComponentMethodClick($event)"></app-table-data> -->
+<app-modal *ngIf="showModal" (modalOutput)= "modalClose($event)"></app-modal>
+<form [formGroup]="exampleForm" (ngSubmit)="onSubmitClick()">
+    <div class="form-group">
+      <label>First Name:</label>
+        <input class="form-control" formControlName="firstName">
+      <label>Last Name:</label>
+            <input class="form-control" formControlName="lastName">
+    </div>
+    <div>
+        <button type="submit" >Submit</button>
+      </div>
+  </form>
+  <table *ngIf="list.length>0">
+<thead>
+<tr>
+  <th> firstName</th>
+  <th>last name</th>
+  <th>operation</th>
+</tr>
+</thead>
+<tbody>
+  <tr *ngFor="let item of list; let i = index">
+    <td>{{item.firstName}}</td>
+    <td>{{item.lastName}}</td>
+    <td> <button (click)="editTable(item,i)">edit</button></td>
+  </tr>
+  
+</tbody>
+
+
+
+
+  </table>
+  
+  

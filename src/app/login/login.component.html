@@ -1,0 +1,23 @@
+<div class="login card col-md-4">
+<!-- <div>
+  user name:<input label="username" type="text" [(ngModel)]="username" >
+</div>
+<div> Password <input label="username" type="password" [(ngModel)]="password"></div>
+<button (click)="userLoginClick()" class="btn btn-primary">Login</button> -->
+
+<form class="card-body" action="/html/tags/html_form_tag_action.cfm" >
+  <fieldset class="form-group ">
+  <label for="first_name">First Name</label>
+  <input type="text" class="form-control" id="first_name" name="first_name" [(ngModel)]="username">
+  </fieldset>
+  <fieldset class="form-group">
+  <label for="last_name">Last Name</label>
+  <input type="password" class="form-control" id="last_name" name="last_name" [(ngModel)]="password">
+  </fieldset>
+  <div class="form-group">
+    
+    <button type="submit" class="form-control"  (click)="userLoginClick()" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+
+</div>
